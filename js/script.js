@@ -1,5 +1,5 @@
 //Object Array to hold quotes, sources, citaitons and years
-var quotes = [
+const quotes = [
   {
     quote:
       "Be who you are and say what you feel, because those who mind don't matter and those who matter don't mind.",
@@ -42,11 +42,11 @@ var quotes = [
     quote: "No one can make you feel inferior without your consent.",
     source: "Eleanor Roosevelt",
   },
-  {
-    quote:
-      "The woman who follows the crowd will usually go no further than the crowd. The woman who walks alone is likely to find herself in places no one has been before.",
-    source: "Albert Einstein",
-  },
+  // {
+  //   quote:
+  //     "The woman who follows the crowd will usually go no further than the crowd. The woman who walks alone is likely to find herself in places no one has been before.",
+  //   source: "Albert Einstein",
+  // },
   {
     quote:
       "You can't go around building a better world for people. Only people can build a better world for people. Otherwise it's just a cage.",
@@ -131,11 +131,11 @@ var quotes = [
     quote: "Do not set yourself on fire in order to keep others warm.",
     source: "Anonymous",
   },
-  {
-    quote:
-      "The way I see it, every life is a pile of good things and bad things. The good things don't always soften the bad things, but vice versa, the bad things don't always spoil the good things and make them unimportant.",
-    source: "Doctor Who",
-  },
+  // {
+  //   quote:
+  //     "The way I see it, every life is a pile of good things and bad things. The good things don't always soften the bad things, but vice versa, the bad things don't always spoil the good things and make them unimportant.",
+  //   source: "Doctor Who",
+  // },
   {
     quote: "It's supposed to be hard. If it were easy, everyone would do it.",
     source: "Jimmy Dugan",
@@ -183,26 +183,26 @@ var quotes = [
 
 //Function to randomly select a quote value and return a random quote object from the quotes array
 function getRandomQuote() {
-  var randomNumber = Math.floor(Math.random() * quotes.length);
-  var randomQuote = quotes[randomNumber];
+  const randomNumber = Math.floor(Math.random() * quotes.length);
+  const randomQuote = quotes[randomNumber];
   return randomQuote;
 }
 
 //Function to select random rgb color value
 function getRandomColor() {
-  var red = Math.floor(Math.random() * 256);
-  var green = Math.floor(Math.random() * 256);
-  var blue = Math.floor(Math.random() * 256);
-  var randomColor = "rgb(" + red + "," + green + "," + blue + ")";
+  const red = Math.floor(Math.random() * 256);
+  const green = Math.floor(Math.random() * 256);
+  const blue = Math.floor(Math.random() * 256);
+  const randomColor = "rgb(" + red + "," + green + "," + blue + ")";
   return randomColor;
 }
 
-//Function to call the getRandomQuote function and stores the returned quote object in a variable
+//Function to call the getRandomQuote function and stores the returned quote object in a constiable
 //Constructs a string containing the different properties of the quote object
 function printQuote() {
-  var quotes = getRandomQuote();
-  var quoteContainer = document.getElementById("quote-box");
-  var quoteString = `<p class="quote">${quotes.quote}</p><p class="source">${quotes.source}`;
+  const quotes = getRandomQuote();
+  const quoteContainer = document.getElementById("quote-box");
+  let quoteString = `<p class="quote">${quotes.quote}</p><p class="source">${quotes.source}`;
   if (quotes.citation) {
     quoteString += `<span class="citation">${quotes.citation}</span>`;
   }
